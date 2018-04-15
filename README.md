@@ -1,2 +1,2 @@
 # opac-cli
-Ohioedge Persistence API for Cassandra - Command Line Interface
+Object Persistence API for Cassandra - Command Line Interface
