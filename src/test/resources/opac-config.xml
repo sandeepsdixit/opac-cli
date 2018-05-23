@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <name>opac-sample</name>
+  <description>opac-cli sample application</description>
+  <modules>
+    <module-ref>
+      <name>pet-hobby</name>
+      <url>/opac-pet-hobby-module.xml</url>
+    </module-ref>
+  </modules>
+  <runtime-specification name="local" status="active">
+    <logging-properties-file>/usr/local/ohioedge/crm/log4j.properties</logging-properties-file>
+    <fixed-thread-pool-size>64</fixed-thread-pool-size>
+    <tx-timeout-seconds>120</tx-timeout-seconds>
+    <database-connections>
+      <database-connection>
+        <name>cassandra</name>
+        <type>cassandra-java-driver</type>
+        <username>cassandra</username>
+        <password>cassandra</password>
+        <schema>sample</schema>
+        <strategy>SimpleStrategy</strategy>
+        <replication-factor>2</replication-factor>
+        <cluster>ip_address_1,ip_address_2</cluster>
+      </database-connection>
+    </database-connections>
+  </runtime-specification>
+  <security-managers>
+    <security-manager name="none" status="active">
+      <class-name type="singleton">org.j2eebuilder.security.NoneSecurityManager
+      </class-name>
+    </security-manager>
+  </security-managers>
+  <service-locators>
+    <service-locator name="sl" type="managed" status="active">
+      <class-name type="singleton">org.j2eebuilder.service.ManagedServiceLocatorBean
+      </class-name>
+    </service-locator>
+  </service-locators>
+</application>
