@@ -21,9 +21,9 @@ repositories {
     jcenter()
     
     flatDir {
-      dirs '/Users/sdixit/Dev/jeebuilder/src/components/builder-logging/build/lib/', 
-      '/Users/sdixit/Dev/jeebuilder/src/components/builder-driver/build/lib/',
-	  '/Users/sdixit/Dev/jeebuilder/src/components/builder/build/lib/'      
+      dirs 'lib/', 
+      'lib/',
+	  'lib/'      
     }    
 }
 dependencies {
